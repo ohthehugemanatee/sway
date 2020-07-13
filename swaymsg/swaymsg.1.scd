@@ -46,7 +46,12 @@ _swaymsg_ [options...] [message]
 
 	See **sway**(5) for a list of commands.
 
-	Tip: If you are proving a command that contains a leading hyphen (_-_),
+	Tips:
+	- Command expansion is performed twice: once by swaymsg, and again by sway.
+	If you have quoted multi-word strings in your command, enclose the entire command
+	in single-quotes. For example, use _swaymsg 'output "Foobar Display" enable'_
+	instead of _swaymsg output "Foobar Display" enable_
+	- If you are proving a command that contains a leading hyphen (_-_),
 	insert two hyphens (_--_) before the command to signal to swaymsg not to
 	parse anything beyond that point as an option. For example, use
 	_swaymsg -- mark --add test_ instead of _swaymsg mark --add test_
